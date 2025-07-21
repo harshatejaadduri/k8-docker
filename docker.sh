@@ -9,7 +9,6 @@ usermod -aG docker ec2-user
 
 growpart /dev/nvme0n1 4
 lvextend -L +14G /dev/RootVG/rootVol
-lvextend -L +16G /dev/mapper/RootVG-homeVol
+lvextend -L +16G /dev/RootVG/varVol
 xfs_growfs /
-xfs_growfs /home 
-
+xfs_growfs /var

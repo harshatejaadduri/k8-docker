@@ -1,12 +1,12 @@
 resource "aws_instance" "docker" {
   ami           = local.ami_id
-  instance_type = "t3.micro"
+  instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.allow_all_docker.id]
 
   # need more for terraform
   root_block_device {
     volume_size = 50
-    volume_type = "gp3" # or "gp2", depending on your preference
+    volume_type = "gp3" 
   }
   user_data = file("docker.sh")
   #iam_instance_profile = "TerraformAdmin"
