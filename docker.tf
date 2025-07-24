@@ -13,6 +13,7 @@ resource "aws_instance" "k8" {
   tags = {
      Name = "Kubernetes"
   }
+  iam_instance_profile = "TerrafromEc2Access"
 }
 
 resource "aws_security_group" "allow_all_docker" {
