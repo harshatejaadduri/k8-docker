@@ -3,7 +3,7 @@ resource "aws_instance" "k8" {
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.allow_all_docker.id]
 
-  # need more for terraform
+  # need more for docker
   root_block_device {
     volume_size = 50
     volume_type = "gp3" 
